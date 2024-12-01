@@ -1,0 +1,37 @@
+#featured-properties{
+  @include Flexible(center, center, row, wrap, 0);
+  font-family: $Base_Font;
+  padding: 60px 0;
+
+
+  .top-text{
+    @include Flexible(center, center, column, wrap, 0);
+    margin: 40px 0;
+    .top-tag-inner{
+      @include Flexible(center, center, row, wrap, 0);
+      letter-spacing: -.05em;
+      text-transform: uppercase;
+      background-color: #f7f7f7;
+      border: 2px solid #e8e8e8;
+      border-radius: 28px;
+      height: 40px;
+      margin-bottom: 16px;
+      padding: 8px 16px;
+      font-size: 14px;
+      line-height: 1.5;
+      display: inline-flex
+  ;
+
+
+    }
+    h1{
+      margin-top: 0;
+      margin-bottom: 0;
+      font-size: 48px;
+      font-weight: 600;
+      line-height: 112%;
+      letter-spacing: -.3px;
+      color: black;
+    }
+  }
+}

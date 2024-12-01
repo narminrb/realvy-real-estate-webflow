@@ -1,1 +1,208 @@
-/*# sourceMappingURL=style.css.map */
+@import url("https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap");
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+#navbar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 0;
+  font-family: "Inter", sans-serif;
+  padding: 20px 0;
+}
+#navbar .row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 0;
+}
+#navbar .nav-menu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 0;
+  width: 100%;
+}
+#navbar .nav-menu ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 60px;
+  display: flex;
+  justify-content: center;
+  padding: 0;
+  margin: 0;
+}
+#navbar .nav-menu ul li {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 0px;
+  list-style: none;
+}
+#navbar .nav-menu ul li a {
+  text-decoration: none;
+  color: #0c0407;
+  padding-top: 7px;
+  padding-bottom: 7px;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 100%;
+}
+#navbar .explore {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 0;
+}
+#navbar .explore button {
+  color: rgb(255, 255, 255);
+  border-color: rgb(12, 4, 7);
+  z-index: 1;
+  background-color: black;
+  border-radius: 12px;
+  justify-content: center;
+  align-items: center;
+  padding: 16px 28px;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 100%;
+  text-decoration: none;
+  display: inline-flex;
+  position: relative;
+  overflow: hidden;
+}
+
+#banner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 0;
+  font-family: "Inter", sans-serif;
+  padding: 60px 0;
+}
+#banner .banner-essentials {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  flex-wrap: wrap;
+  gap: 0;
+}
+#banner .banner-essentials .top-tag-inner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 0;
+  grid-column-gap: 8px;
+  grid-row-gap: 8px;
+  color: #0c0407;
+  text-align: left;
+  letter-spacing: -0.04em;
+  text-transform: uppercase;
+  background-color: #f7f7f7;
+  border: 2px solid #e8e8e8;
+  border-radius: 28px;
+  justify-content: center;
+  align-items: center;
+  padding: 6px 18px 6px 16px;
+  font-weight: 500;
+  display: inline-flex;
+}
+#banner .banner-essentials .banner-title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 0;
+  margin: 20px 0;
+}
+#banner .banner-essentials .banner-title h1 {
+  letter-spacing: -0.08em;
+  text-transform: uppercase;
+  font-size: 200px;
+  line-height: 1.1;
+  color: #0c0407;
+}
+#banner .banner-essentials .banner-image {
+  opacity: 1;
+  transform: translate3d(0px, -41.806px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg);
+  transform-style: preserve-3d;
+  will-change: transform;
+  text-align: center;
+  justify-content: center;
+  align-items: flex-end;
+  display: flex;
+}
+#banner .banner-essentials .banner-image img {
+  width: 100%;
+  max-width: 1500px;
+}
+
+#featured-properties {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 0;
+  font-family: "Inter", sans-serif;
+  padding: 60px 0;
+}
+#featured-properties .top-text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  flex-wrap: wrap;
+  gap: 0;
+  margin: 40px 0;
+}
+#featured-properties .top-text .top-tag-inner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 0;
+  letter-spacing: -0.05em;
+  text-transform: uppercase;
+  background-color: #f7f7f7;
+  border: 2px solid #e8e8e8;
+  border-radius: 28px;
+  height: 40px;
+  margin-bottom: 16px;
+  padding: 8px 16px;
+  font-size: 14px;
+  line-height: 1.5;
+  display: inline-flex;
+}
+#featured-properties .top-text h1 {
+  margin-top: 0;
+  margin-bottom: 0;
+  font-size: 48px;
+  font-weight: 600;
+  line-height: 112%;
+  letter-spacing: -0.3px;
+  color: black;
+}/*# sourceMappingURL=style.css.map */
