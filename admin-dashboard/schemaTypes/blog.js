@@ -41,6 +41,11 @@ export default defineType({
   type: 'document',
   fields: [
     defineField({
+      name: 'name',
+      title: 'Name',
+      type: 'string',
+    }),
+    defineField({
       name: 'title',
       title: 'Title',
       type: 'string',
@@ -64,6 +69,62 @@ export default defineType({
       name: 'mainImage',
       title: 'Main image',
       type: 'image',
+      options: {
+        hotspot: true,
+      },
+    }),
+    defineField({
+      name: 'price',
+      title: 'Price',
+      type: 'text',
+      options: {
+        hotspot: true,
+      },
+    }),
+    defineField({
+      name: 'transactions',
+      title: 'Transactions',
+      type: 'text',
+      options: {
+        hotspot: true,
+      },
+    }),
+    defineField({
+      name: 'room',
+      title: 'Room',
+      type: 'number',
+      options: {
+        hotspot: true,
+      },
+    }),
+    defineField({
+      name: 'location',
+      title: 'Location',
+      type: 'text',
+      options: {
+        hotspot: true,
+      },
+    }),
+    defineField({
+      name: 'size',
+      title: 'Size',
+      type: 'number',
+      options: {
+        hotspot: true,
+      },
+    }),
+    defineField({
+      name: 'bathroom',
+      title: 'Bathroom',
+      type: 'number',
+      options: {
+        hotspot: true,
+      },
+    }),
+    defineField({
+      name: 'garage',
+      title: 'Garage',
+      type: 'number',
       options: {
         hotspot: true,
       },
