@@ -1,0 +1,92 @@
+#contact{
+    @include Flexible(center, center, row, wrap, 0);
+    font-family: $Base_Font;
+    background-color: #0c0407;
+    margin-top: 80px;
+    padding-top: 120px;
+    padding-bottom: 28px;
+    position: relative;
+  .top-text {
+    @include Flexible(flex-start, flex-start, column, wrap, 0);
+    margin: 10px 0;
+    top: 20px;
+
+    .top-tag-inner {
+      @include Flexible(center, center, row, wrap, 0);
+      color: white;
+      letter-spacing: -.05em;
+      text-transform: uppercase;
+      background-color: #f7f7f71a;
+      border: 2px solid #ffffff1f;
+      border-radius: 28px;
+      margin-bottom: 16px;
+      padding: 8px 20px;
+      font-size: 14px;
+      line-height: 1.5;
+      display: inline-flex
+  ;
+    }
+
+    h1 {
+      margin-top: 0;
+      margin-bottom: 0;
+      font-size: 52px;
+      font-weight: 600;
+      line-height: 112%;
+      letter-spacing: -.3px;
+      color: white;
+    }
+  }
+  .explore {
+    @include Flexible(flex-start, flex-start, row, wrap, 0);
+    margin-right: 30px;
+    margin-top: 25px;
+    button{
+      color: black;
+      background-color: #fff;
+      border-bottom: 1px solid #e0e0e0;
+      border-radius: 12px;
+      padding: 16px 28px;
+      font-weight: 500;
+      line-height: 100%;
+      border: none;
+    }
+  }
+
+  .img-box{
+    width: 100%;
+    max-width: 1038px;
+    margin-right: -200px;
+    opacity: 1;
+    transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg);
+    transform-style: preserve-3d;
+}
+    img{
+      max-width: 100%;
+    height: auto;
+    display: inline-block;
+    vertical-align: middle;
+    }
+
+
+
+    .inputs {
+      @include Flexible(flex-start, flex-start, column, wrap, 0);
+    
+      input {
+        padding-top: 15px;
+        padding-bottom: 10px;
+        padding-left: 0; 
+        padding-right: 0; 
+        text-align: left; 
+        background-color: transparent;
+        outline: none;
+        color: white;
+        margin: 10px 0;
+        border: none;
+        border-bottom: 1px solid #ccc;
+        width: 70%; 
+      }
+    }
+    
+  }

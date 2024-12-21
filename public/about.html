@@ -8,7 +8,11 @@
   <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
   <link rel="stylesheet" href="../src/styles/style.css">
+
+
+
 </head>
 <body>
   <header>
@@ -17,7 +21,7 @@
         <div class="row">
           <div class="col-xl-3">
             <div class="logo">
-             <a href="./home.html"> <img src="https://cdn.prod.website-files.com/670010141e02b62e6f054e13/672b0cbffbb01b1ebb84e214_Realfy.svg" alt=""></a>
+              <a href="./home.html"> <img src="https://cdn.prod.website-files.com/670010141e02b62e6f054e13/672b0cbffbb01b1ebb84e214_Realfy.svg" alt=""></a>
             </div>
           </div>
           <div class="col-xl-6">
@@ -34,10 +38,20 @@
                     <li><a href="#">Licenses</a></li>
                     <li><a href="#">404 Page</a></li>
                     <li><a href="#">Privacy Policy</a></li>
-                  </ul>
-                </li>
+                  </ul></li>
                 <li><a href="./blog.html">Blog</a></li>
-                <li><a href="#">Cart</a></li>
+                <li><a href="#" id="cart-link">Cart</a>
+                  <div id="cart-modal" class="modal" style="display: none;">
+                    <div class="modal-content">
+                      <span class="close" onclick="closeModal()">&times;</span>
+                      <h2>Cart</h2>
+                      <div id="cart-items"></div>
+                      <div class="cart-total">
+                        <h3>Total: <span id="cart-total">0.00</span></h3>
+                      </div>
+                    </div>
+                  </div>
+                </li>
               </ul>
             </div>
           </div>
@@ -50,115 +64,204 @@
       </div>
     </nav>
   </header>
-  <section id="banner">
+  <section id="about-banner">
     <div class="container-fluid">
       <div class="row">
-        <div class="col-xl-12">
+        <div class="col-xl-12 col-md-6 col-sm-12">
          <div class="banner-essentials">
             <div class="top-tag-inner">
               <i class="ri-home-5-line"></i>
-              Buy & Sell Your dream
+              Who we are
             </div>
           <div class="banner-title">
-            <h1>Real-Estate</h1>
+            <h1>About us</h1>
           </div>
           <div class="banner-image">
-            <img src="https://cdn.prod.website-files.com/670010141e02b62e6f054e13/6716050fb9b344e630550c81_hero-thumb-1-p-2000.png" alt="">
+            <img src="https://cdn.prod.website-files.com/670010141e02b62e6f054e13/670299d92521f332b89487bf_about-banner-1-p-1600.jpg" alt="">
           </div>
          </div>
         </div>
       </div>
     </div>
   </section>
-  <section id="featured-properties">
+  <section id="aboutideal-way">
     <div class="container">
-      <div class="row">
-        <div class="top-text">
-          <div class="top-tag-inner">
-            Recent properties
+      <div class="row" style="padding-left: 50px; padding-right: 50px;">
+        <div class="col-xl-6 col-md-6 col-sm-12">
+          <div class="ideal-image">
+            <img src="https://cdn.prod.website-files.com/670010141e02b62e6f054e13/67029d681751ec6b915f0694_mission-thumb-1-p-800.jpg" alt="">
           </div>
-          <h1>Featured properties</h1>
         </div>
-       <div class="row g-1 data-blogs">
-        
+        <div class="col-xl-6 col-md-6 col-sm-12">
+          <div class="ideal-left">
+            <div class="about">
+              <h2>Our missions</h2>
+            </div>
+            <div class="ideal-name">
+              <h1>Our commitment to
+                <br>
+                your success</h1>
+            </div>
+            <div class="ideal-parag">
+              <p>We are committed to environmental responsibility and incorporate
+                <br>
+                sustainable practices in real estate wherever possible.
+            </div>
+            <div class="cases">
+              <ul>
+                <li><h3>Exceed client expectations</h3></li>
+                <li><h3>Empower informed decisions</h3></li>
+                <li><h3>Innovate for efficiency</h3></li>
+              </ul>
+              <ul>
+                <li><h3>Provide tailored solutions</h3></li>
+                <li><h3>Ensure financial transparency</h3></li>
+                <li><h3>Foster collaboration</h3></li>
+              </ul>
+            </div>
+            <div class="ideal-btn">
+              <button><a href="#">Contact Us</a></button>
+            </div>
+          </div>
+    
         </div>
-        <div id="pagination" class="pagination">
+      </div>
+    </div>
+    
+    </section>
+  <section id="aboutnumbers">
+      <div class="container">
+        <div class="row">
+          <div class="col-xl-6 col-md-12 col-sm-12">
+            <div class="top-text">
+              <div class="top-tag-inner">
+                Our values
+              </div>
+              <h1>The values that drive
+                <br>us forward</h1>
+                <div class="list">
+                  <ul>
+                    <li>
+                      <h3>We believe in transparency and honesty
+                      </h3>
+                    </li>
+                    <li><h3>Our clients' needs and satisfaction are our top priorities</h3></li>
+                    <li><h3>We strive for perfection in all we do</h3></li>
+                    <li><h3>Building lasting relationships with clients</h3></li>
+                    <li><h3>Giving back and supporting the communities where we live</h3></li>
+                  </ul>
+                </div>
+                <div class="ideal-btn">
+                  <button><a href="#">Contact Us</a></button>
+                </div>
+            </div>
+          </div>
+          <div class="col-xl-6 col-md-12 col-sm-12">
+            <div class="row">
+              <div class="col-xl-12">
+                <div class="numbers">
+                  <div class="number-card">
+                    <div class="head">
+                      <h2>
+                        <img src="https://cdn.prod.website-files.com/670010141e02b62e6f054e13/6702a0c9b3033cc9a9784d44_mission-icon-1.svg" alt="">
+                      </h2>
+                    </div>
+                  
+                    <div class="paragraph">
+                      <h2>Innovation</h2>
+                      <p>We stay ahead of market trends <br>
+                        and embrace new technologies <br>
+                        effective solutions for our clients.
+                    </div>
+                  </div>
+                  <div class="number-card">
+                    <div class="head">
+                      <h2>
+                        <img src="https://cdn.prod.website-files.com/670010141e02b62e6f054e13/6702a0c99eee002effb934e4_mission-icon-2.svg" alt="">
+                      </h2>
+                    </div>
+                    <div class="paragraph">
+                      <h2>Quality</h2>
+                      <p>We are committed to exceeding<br>
+                        expectations by delivering high-<br>
+                        quality service, expert advice.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-xl-12">
+                <div class="numbers">
+                  <div class="number-card">
+                    <div class="head">
+                      <h2>
+                        <img src="https://cdn.prod.website-files.com/670010141e02b62e6f054e13/6702a0c9af6aa8396a073afa_mission-icon-3.svg" alt="">
+                      </h2>
+                    </div>
+                    <div class="paragraph">
+                      <h2>Growth</h2>
+                      <p>We foster long-term relationships <br>
+                        by delivering on our promises <br>
+                         and maintaining communication.<br>
+                          </p>
+                    </div>
+                  </div>
+                  <div class="number-card">
+                    <div class="head">
+                      <h2>
+                        <img src="https://cdn.prod.website-files.com/670010141e02b62e6f054e13/6702a0c92759a79b03c33f9e_mission-icon-4.svg" alt="">
+                      </h2>
+                    </div>
+                    <div class="paragraph">
+                      <h2>Community</h2>
+                      <p>We believe in giving back and <br>
+                        making a positive impact in the <br>
+                        communities where we work.<br>
+                       </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-xl-12">
+                <div class="row">
+                  <div class="numbers">
+                    <div class="number-card">
+                      <div class="head">
+                        <h2>
+                          <img src="https://cdn.prod.website-files.com/670010141e02b62e6f054e13/6702a0c9131d41ce9307f21f_mission-icon-5.svg" alt="">
+                        </h2>
+                      </div>
+                      <div class="paragraph">
+                        <h2>Interaction</h2>
+                        <p>Our clients are at the heart of our <br>
+                          business. We listen, understand <br>
+                          their needs, satisfaction.
+                          </p>
+                      </div>
+                    </div>
+                    <div class="number-card">
+                      <div class="head">
+                        <h2>
+                          <img src="https://cdn.prod.website-files.com/670010141e02b62e6f054e13/6702a0ca6cbbdd837f795a57_mission-icon-6.svg" alt="">
+                        </h2>
+                      </div>
+                    
+                      <div class="paragraph">
+                        <h2>Integrity</h2>
+                        <p>We operate with honesty, and a <br>
+                          dedication to doing what’s right <br>
+                          in every transaction.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
           
         </div>
-        
-          </div>
-        </div>
+      </div>
   </section>
-<section id="ideal-way">
-<div class="container">
-  <div class="row">
-    <div class="col-xl-6 col-md-6 col-sm-12">
-      <div class="ideal-left">
-        <div class="about">
-          <h2>About Us</h2>
-        </div>
-        <div class="ideal-name">
-          <h1>The ideal way to find 
-            <br>
-            your dream home</h1>
-        </div>
-        <div class="ideal-parag">
-          <p>Wake up to the sound of waves and the smell of salt air in one of our 
-            <br>
-            stunning coastal homes. Perfect for those seeking a serene escape, 
-            <br>
-            these properties offer unmatched ocean views and direct beach safe <br>
-             neighborhoods, and nearby schools access.</p>
-        </div>
-        <div class="ideal-btn">
-          <button><a href="#">Read more</a></button>
-        </div>
-      </div>
-
-    </div>
-    <div class="col-xl-6 col-md-6 col-sm-12">
-      <div class="ideal-image">
-        <img src="https://cdn.prod.website-files.com/670010141e02b62e6f054e13/67014ccc08fb3aa6c87cb90d_about-thumb-1-p-800.jpg" alt="">
-      </div>
-    </div>
-  </div>
-</div>
-
-</section>
-<section id="categories-properties">
-  <div class="container">
-    <div class="row">
-      <div class="top-text">
-        <div class="top-tag-inner">
-          Recent properties
-        </div>
-        <h1>Start your journey to 
-          <br>your ideal property</h1>
-      </div>
-     <div class="row g-1 data-categories">
-      <!-- <div class="col-xl-4">
-        <div class="categories">
-          <div class="categories-img-box">
-            <img src="https://cdn.prod.website-files.com/6704d32b156a64ece7cc9779/67091f3f674dafa04e4277ef_properties-thumb-1-p-500.jpg" alt="">
-          </div>
-          <div class="name">
-            <h3>Sunset luxury villa</h3>
-          </div>
-          <div class="paragraph">
-            <p>Sustainable living in eco-friendly homes equipped
-              <br>
-               with cutting-edge green technologies.</p>
-          </div>
-          <div class="categories-btn">
-            <a href="#">Explore Now</a>
-          </div>
-        </div>
-      </div> -->
-      </div>
-      
-        </div>
-      </div>
-</section>
 <section id="ideal-way">
   <div class="container">
     <div class="row">
@@ -195,83 +298,84 @@
   </div>
   
   </section>
-<section id="numbers">
-  <div class="container">
-    <div class="row">
-      <div class="col-xl-6 col-md-12 col-sm-12">
-        <div class="top-text">
-          <div class="top-tag-inner">
-            Some Numbers
-          </div>
-          <h1>The numbers behind
-            <br>our success</h1>
-            <div class="ideal-btn">
-              <button><a href="#">Contact Us</a></button>
+  <section id="numbers">
+    <div class="container">
+      <div class="row">
+        <div class="col-xl-6 col-md-12 col-sm-12">
+          <div class="top-text">
+            <div class="top-tag-inner">
+              Some Numbers
             </div>
+            <h1>The numbers behind
+              <br>our success</h1>
+              <div class="ideal-btn">
+                <button><a href="#">Contact Us</a></button>
+              </div>
+          </div>
         </div>
-      </div>
-      <div class="col-xl-6 col-md-12 col-sm-12">
-        <div class="row">
-          <div class="col-xl-6">
-            <div class="numbers">
-              <div class="number-card">
-                <div class="head">
-                  <h2>200+</h2>
+        <div class="col-xl-6 col-md-12 col-sm-12">
+          <div class="row">
+            <div class="col-xl-6">
+              <div class="numbers">
+                <div class="number-card">
+                  <div class="head">
+                    <h2>200+</h2>
+                  </div>
+                  <div class="bot">
+                    <p>Properties</p>
+                  </div>
+                  <div class="paragraph">
+                    <p>Discover the key figures that <br>
+                      highlight our impact in the real <br>
+                      estate market. From satisfied <br>
+                      clients to successful transactions</p>
+                  </div>
                 </div>
-                <div class="bot">
-                  <p>Properties</p>
-                </div>
-                <div class="paragraph">
-                  <p>Discover the key figures that <br>
-                    highlight our impact in the real <br>
-                    estate market. From satisfied <br>
-                    clients to successful transactions</p>
-                </div>
-              </div>
-              <div class="number-card">
-                <div class="head">
-                  <h2>100%</h2>
-                </div>
-                <div class="bot">
-                  <p>Happy Clients</p>
-                </div>
-                <div class="paragraph">
-                  <p>From closed deals to client<br>
-                    satisfaction ratings, our numbers<br>
-                    showcase the impact we’ve made<br>
-                    in the real estate industry</p>
+                <div class="number-card">
+                  <div class="head">
+                    <h2>100%</h2>
+                  </div>
+                  <div class="bot">
+                    <p>Happy Clients</p>
+                  </div>
+                  <div class="paragraph">
+                    <p>From closed deals to client<br>
+                      satisfaction ratings, our numbers<br>
+                      showcase the impact we’ve made<br>
+                      in the real estate industry</p>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-          <div class="col-xl-6">
-            <div class="numbers">
-              <div class="number-card">
-                <div class="head">
-                  <h2>300+</h2>
+            <div class="col-xl-6">
+              <div class="numbers">
+                <div class="number-card">
+                  <div class="head">
+                    <h2>300+</h2>
+                  </div>
+                  <div class="bot">
+                    <p>Satisfied Users</p>
+                  </div>
+                  <div class="paragraph">
+                    <p>Take a closer look at the statistics <br>
+                      that reflect our growth, success,<br>
+                      and dedication to helping clients<br>
+                      achieve their real estate goals.</p>
+                  </div>
                 </div>
-                <div class="bot">
-                  <p>Satisfied Users</p>
-                </div>
-                <div class="paragraph">
-                  <p>Take a closer look at the statistics <br>
-                    that reflect our growth, success,<br>
-                    and dedication to helping clients<br>
-                    achieve their real estate goals.</p>
-                </div>
-              </div>
-              <div class="number-card">
-                <div class="head">
-                  <h2>900K</h2>
-                </div>
-                <div class="bot">
-                  <p>Follower</p>
-                </div>
-                <div class="paragraph">
-                  <p>Explore the numbers behind our<br>
-                    real estate success, showcasing<br>
-                    the trust clients place in us and<br>
-                    the results we consistently deliver.</p>
+                <div class="number-card">
+                  <div class="head">
+                    <h2>900K</h2>
+                  </div>
+                  <div class="bot">
+                    <p>Follower</p>
+                  </div>
+                  <div class="paragraph">
+                    <p>Explore the numbers behind our<br>
+                      real estate success, showcasing<br>
+                      the trust clients place in us and<br>
+                      the results we consistently deliver.</p>
+                  </div>
                 </div>
               </div>
             </div>
@@ -279,109 +383,6 @@
         </div>
       </div>
     </div>
-  </div>
-</section>
-<section id="process">
-  <div class="container">
-    <div class="row">
-      <div class="top-text">
-        <div class="top-tag-inner">
-          Recent properties
-        </div>
-        <h1>Find your dream house &
-          <br>follow our process</h1>
-      </div>
-        <div class="col-xl-6 col-md-6 col-sm-12">
-          <div class="process-left">
-            <div class="full">
-              <div class="top-tag-inner">
-                Step-1
-              </div>
-              <div class="name">
-                <h2>Look for your dream <br>
-                  home in your local <br>
-                  area today</h2>
-              </div>
-              <div class="paragraph">
-                <p>Explore a carefully curated selection of stunning homes near you that <br>
-                  perfectly match your unique lifestyle, preferences, and specific needs,<br>
-                   offering the ideal balance of comfort, style, luxury, and location. Each <br>
-                   property is handpicked to provide the perfect combination.</p>
-              </div>
-            </div>
-            <div class="full">
-              <div class="top-tag-inner">
-                Step-2
-              </div>
-              <div class="name">
-                <h2>Schedule a meeting <br>
-                  with one of our agents</h2>
-              </div>
-              <div class="paragraph">
-                <p>Book a personalized meeting with one of our experienced agents to <br>
-                  thoroughly explore all your options, discuss your needs, and find the <br>
-                  perfect property that fits your lifestyle and budget.</p>
-              </div>
-            </div>
-            <div class="full">
-              <div class="top-tag-inner">
-                Step-3
-              </div>
-              <div class="name">
-                <h2>A month or less, get <br>
-                  your ideal home</h2>
-              </div>
-              <div class="paragraph">
-                <p>Secure your dream home in a month or less with our expert assistance, <br>
-                  personalized guidance, and streamlined processes, ensuring a smooth, <br>
-                  stress-free, and successful journey tailored specifically to your needs and <br>
-                  preferences from start to finish.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-xl-6 col-md-6 col-sm-12">
-          <div class="process-right">
-            <div class="img-box">
-              <img
-                src="https://cdn.prod.website-files.com/670010141e02b62e6f054e13/67018c77e82d41323b7c69ca_process-thumb-1-p-800.jpg"
-                alt="Step 1"
-               
-              />
-              <img
-                src="https://cdn.prod.website-files.com/670010141e02b62e6f054e13/67018c7528a69477c950bea9_process-thumb-2-p-800.jpg"
-                alt="Step 2" 
-              />
-              <img
-                src="https://cdn.prod.website-files.com/670010141e02b62e6f054e13/67018c75a96327a0b77b36e9_process-thumb-3-p-800.jpg"
-                alt="Step 3"
-              />
-            </div>
-          </div>
-          
-        </div>
-        </div>
-      </div>
-</section>
-<section id="staffswiper">
-  <div class="container-fluid">
-    <div class="row">
-      <div class="top-text">
-        <div class="top-tag-inner">
-          Our agents
-        </div>
-        <h1>Our expert agents</h1>
-      </div>
-      <div class="swiper mySwiper">
-          <div class="swiper-wrapper slider-blog-el">
-            <!-- <div class="swiper-slide" style="border-radious:20px;">
-              <img src="${slide?.mainImage?.asset?.url}" style="border-radious:20px;" class="card-img-top w-100" alt="">
-              </div> -->
-          </div>
-      </div>
-          
-    </div>
-  </div>
 </section>
 <section id="testimonials">
   <div class="container-fluid">
@@ -487,47 +488,6 @@
         </div>
       </div>
      <div class="row g-1 articles">
-      <!-- <div class="col-xl-4 col-md-6 col-sm-12">
-        <div class="categories">
-          <div class="categories-img-box">
-            <img src="https://cdn.prod.website-files.com/6704d32b156a64ece7cc9779/67091f3f674dafa04e4277ef_properties-thumb-1-p-500.jpg" alt="">
-          </div>
-          <div class="name">
-            <h3>${article.name}</h3>
-          </div>
-          <div class="dates">
-            <div class="date">
-              <i class="ri-calendar-2-line"></i>
-              <h3>6 december,2024</h3>
-            </div>
-            <div class="time">
-              <i class="ri-timer-2-line"></i>
-              <h3>20 min read</h3>
-            </div>
-          </div>
-          <div class="categories-btn">
-            <a href="#">Read more</a>
-          </div>
-        </div>
-      </div> -->
-      <!-- <div class="col-xl-4">
-        <div class="categories">
-          <div class="categories-img-box">
-            <img src="https://cdn.prod.website-files.com/6704d32b156a64ece7cc9779/67091f3f674dafa04e4277ef_properties-thumb-1-p-500.jpg" alt="">
-          </div>
-          <div class="name">
-            <h3>Sunset luxury villa</h3>
-          </div>
-          <div class="paragraph">
-            <p>Sustainable living in eco-friendly homes equipped
-              <br>
-               with cutting-edge green technologies.</p>
-          </div>
-          <div class="categories-btn">
-            <a href="#">Explore Now</a>
-          </div>
-        </div>
-      </div> -->
       </div>
       
         </div>
@@ -664,6 +624,6 @@
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
-<script src="../src/js/app.js"></script>
+<script src="../src/js/about.js"></script>
 </body>
 </html>

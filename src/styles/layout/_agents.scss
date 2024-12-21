@@ -1,0 +1,53 @@
+#agents{
+  @include Flexible(center, center, row, wrap, 0);
+  font-family: $Base_Font;
+
+
+
+
+  .agent{
+    @include Flexible(flex-start, flex-start, column, wrap, 0);
+    max-width: 373px;
+    min-height: 470px;
+    margin-bottom: 30px;
+    .agent-img-box{
+      @include Flexible(center, center, row, wrap, 0);
+      position: relative;
+      width: 373px;
+      height: 430px;
+      overflow: hidden;
+      border-radius: 17px;
+      transition: 0.5s ease-in-out;
+      img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        position: absolute;
+        top: 0;
+        left: 0;
+        transition: 0.5s ease-in-out;
+      }
+      &:hover img{
+        transform: scale(1.08);
+      }
+    }
+    .intro{
+      padding: 15px 0;
+      h1{
+        font-size: 24px;
+        line-height: 112%;
+        font-weight: 600;     
+        color: black;
+  
+      }
+      p{
+        margin: 0;
+        padding: 0;
+        font-size: 14px;
+        color: #333;
+      }
+    }
+    
+  }
+
+}

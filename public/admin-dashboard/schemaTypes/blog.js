@@ -56,11 +56,6 @@ export default defineType({
       type: 'text',
     }),
     defineField({
-      name: 'prop',
-      title: 'Property Description',
-      type: 'text',
-    }),
-    defineField({
       name: 'slug',
       title: 'Slug',
       type: 'slug',

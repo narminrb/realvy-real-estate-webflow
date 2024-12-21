@@ -12,6 +12,9 @@
 let BlogQuery = `*[_type=="blogs"]`;
 let CategoriesQuery = `*[_type=="categories"]`;
 let StaffSlider = `*[_type=="staffslider"]`;
+let Articles = `*[_type=="articles"]`;
+let Faq = `*[_type=="faq"]`;
+// let BlogPage = `*[_type=="blogpage"]`;
 // export async function getPosts() {
 //   const posts = await client.fetch('*[_type == "post"]')
 //   return posts
@@ -32,6 +35,23 @@ function dynamicStaffSliderQueryFunc(query){
   let DATASET = 'production';
   return `https://${PROJECT_ID}.api.sanity.io/v2023-05-03/data/query/${DATASET}?query=${query}`;
 }
+
+function dynamicArticlesQueryFunc(query){
+  let PROJECT_ID ='8ovfuzs4';
+  let DATASET = 'production';
+  return `https://${PROJECT_ID}.api.sanity.io/v2023-05-03/data/query/${DATASET}?query=${query}`;
+}
+function dynamicFaqQueryFunc(query){
+  let PROJECT_ID ='8ovfuzs4';
+  let DATASET = 'production';
+  return `https://${PROJECT_ID}.api.sanity.io/v2023-05-03/data/query/${DATASET}?query=${query}`;
+}
+// function dynamicBlogPageQueryFunc(query){
+//   let PROJECT_ID ='8ovfuzs4';
+//   let DATASET = 'production';
+//   return `https://${PROJECT_ID}.api.sanity.io/v2023-05-03/data/query/${DATASET}?query=${query}`;
+// }
+
 // fetch(PROJECT_URL).then((res) => res.json()).then((res) => {
 //   console.log(res);
 // });
@@ -41,25 +61,38 @@ function urlFor(source) {
 }
 
 let DataQueries = {
-  blogs: `*[_type=="blogs"]{desc,title,price,transactions,location,room,bathroom,garage,slug,size,name,
+  blogs: `*[_type=="blogs"]{desc,title,_id,price,transactions,location,room,bathroom,garage,slug,size,name,
   mainImage{asset->{url}}
   }`,
-  // blogById:`*[_type=="blogs" && _id=="$id"]`
 }
 
 let DataQueriesCategory = {
   categories: `*[_type=="categories"]{desc,title,slug,paragraph,name,
   mainImage{asset->{url}}
   }`,
-  // blogById:`*[_type=="blogs" && _id=="$id"]`
 }
 
 let DataQueriesStaffSlider = {
   staffslider: `*[_type=="staffslider"]{desc,title,slug,paragraph,name,
   mainImage{asset->{url}}
   }`,
-  // blogById:`*[_type=="blogs" && _id=="$id"]`
 }
+
+let DataQueriesArticles = {
+  articles: `*[_type=="articles"]{desc,title,slug,time,date,name,
+  mainImage{asset->{url}}
+  }`,
+}
+let DataQueriesFaq = {
+  faq: `*[_type=="faq"]{question,answer,title,slug}
+  `, 
+};
+
+// let DataQueriesBlogPage = {
+//   blogpage: `*[_type=="blogpage"]{desc,title,slug,time,date,name,
+//   mainImage{asset->{url}}
+//   }`
+// };
 
 async function getApiData(blogQuery,cb) {
    let url = dynamicBlogQueryFunc(blogQuery);
@@ -76,13 +109,29 @@ async function getApiDataSlide(StaffSlider,cb) {
   fetch(url).then((res) => res.json()).then((res) => cb(res.result))
 
 }
+async function getApiDataArticles(articlesQuery,cb) {
+  let url = dynamicArticlesQueryFunc(articlesQuery);
+  fetch(url).then((res) => res.json()).then((res) => cb(res.result))
+
+}
+async function getApiDataFaq(faqQuery,cb) {
+  let url = dynamicFaqQueryFunc(faqQuery);
+  fetch(url).then((res) => res.json()).then((res) => cb(res.result))
+
+}
+// async function getApiDataBlogPage(blogPage,cb) {
+//   let url = dynamicBlogPageQueryFunc(blogPage);
+//   fetch(url).then((res) => res.json()).then((res) => cb(res.result))
+
+// }
 const BlogData = document.querySelector(".data-blogs");
 const DataWithSlider = document.querySelector(".slider-blog-el");
 const renderBlogsData = (blogs) =>{
+  BlogData.innerHTML = "";
   blogs && blogs.forEach(blog => {
     BlogData.innerHTML += `
     <div class="col-xl-4 col-md-6 col-sm-12">
-          <div class="blog">
+          <div class="blog" onclick="navigateToDetail('${blog._id}')">
             <div class="blog-img-box">
               <div class="all">
                 <div class="transactions">
@@ -124,10 +173,62 @@ const renderBlogsData = (blogs) =>{
   `
   });
 }
+function navigateToDetail(blogId) {
+  window.location.href = `/public/detail.html?id=${blogId}`;
+}
 
-getApiData(DataQueries.blogs,(data)=>{
-  renderBlogsData(data)
-})
+// function navigateToDetail(blogId) {
+//   window.location.href = `/public/detail.html?id=${blogId}`;
+// }
+// getApiData(DataQueries.blogs,(data)=>{
+//   renderBlogsData(data)
+// })
+
+const itemsPerPage = 6;
+let currentPage = 1;
+let allBlogs = [];
+
+const Blog = document.querySelector("#products-container");
+
+const Pagination = document.querySelector(".pagination");
+
+const renderPagination = () => {
+  Pagination.innerHTML = "";
+  console.log(Blog);
+  const totalPages = Math.ceil(allBlogs.length / itemsPerPage);
+  console.log("totalPages: " + totalPages);
+
+  for (let i = 1; i <= totalPages; i++) {
+    const button = document.createElement("button");
+    button.innerText = i;
+    button.classList.add("pagination-btn");
+    if (i === currentPage) button.classList.add("active");
+    button.addEventListener("click", () => {
+      currentPage = i;
+      paginateBlogs();
+    });
+    Pagination.appendChild(button);
+  }
+};
+
+const paginateBlogs = () => {
+  const startIndex = (currentPage - 1) * itemsPerPage;
+  const endIndex = startIndex + itemsPerPage;
+  const blogsToShow = allBlogs.slice(startIndex, endIndex);
+  console.log("start: " + startIndex);
+  console.log("end: " + endIndex);
+  console.log(blogsToShow);
+  renderBlogsData(blogsToShow);
+  renderPagination();
+};
+
+getApiData(DataQueries.blogs, (data) => {
+  allBlogs = data;
+  paginateBlogs();
+});
+
+
+//----------------------------------------//
 
 const CategoriesData = document.querySelector(".data-categories");
 const renderCategoriesData = (categories) =>{
@@ -154,9 +255,80 @@ const renderCategoriesData = (categories) =>{
   })
 }
 getApiDataCat(DataQueriesCategory.categories,(data)=>{
-  renderCategoriesData(data)
+  renderCategoriesData(data);
 })
 
+const ArticlesData = document.querySelector(".articles");
+const renderArticlesData = (articles) =>{
+  articles && articles.forEach(article => {
+    ArticlesData.innerHTML += `
+    <div class="col-xl-4 col-md-6 col-sm-12">
+        <div class="categories">
+          <div class="categories-img-box">
+            <img src="${article.mainImage.asset.url}" alt="">
+          </div>
+          <div class="name">
+            <h3>${article.name}</h3>
+          </div>
+          <div class="dates">
+            <div class="date">
+              <i class="ri-calendar-2-line"></i>
+              <h3>${article.date}</h3>
+            </div>
+            <div class="time">
+              <i class="ri-timer-2-line"></i>
+              <h3>${article.time}</h3>
+            </div>
+          </div>
+          <div class="categories-btn">
+            <a href="#">Read more</a>
+          </div>
+        </div>
+      </div>
+    `
+  })
+}
+
+// const BlogArticlesData = document.querySelector(".blogarticles");
+// const renderBlogArticlesData = (blogarticles) => {
+//   blogarticles &&
+//   blogarticles.forEach((blogarticle) => {
+//       BlogArticlesData.innerHTML += `
+//           <div class="col-xl-4 col-md-6 col-sm-12">
+//               <div class="categories">
+//                   <div class="categories-img-box">
+//                       <img src="${blogarticle?.mainImage?.asset?.url || ''}" alt="">
+//                   </div>
+//                   <div class="name">
+//                       <h3>${blogarticle?.name || ''}</h3>
+//                   </div>
+//                   <div class="dates">
+//                       <div class="date">
+//                           <i class="ri-calendar-2-line"></i>
+//                           <h3>${blogarticle?.date || ''}</h3>
+//                       </div>
+//                       <div class="time">
+//                           <i class="ri-timer-2-line"></i>
+//                           <h3>${blogarticle?.time || ''}</h3>
+//                       </div>
+//                   </div>
+//                   <div class="categories-btn">
+//                       <a href="#">Read more</a>
+//                   </div>
+//               </div>
+//           </div>
+//       `;
+//   });
+// };
+
+
+// getApiDataBlogPage(DataQueriesBlogPage.blogpage,(data)=>{
+//   renderBlogArticlesData(data);
+// });
+
+getApiDataCat(DataQueriesArticles.articles,(data)=>{
+  renderArticlesData(data);
+});
 
 const renderBlogsDataSlider = (slides) =>{
   slides && slides.forEach((slide)=> {
@@ -171,11 +343,44 @@ const renderBlogsDataSlider = (slides) =>{
     
     
     `
-  });
+});
 }
 getApiDataSlide(DataQueriesStaffSlider.staffslider,(data)=>{
   renderBlogsDataSlider(data)
 })
+
+
+const ACCARDION_DATA = document.querySelector(".accardion-data");
+const renderAccardionData = (data) => {
+  data &&
+    data.forEach((faq, index) => {
+      ACCARDION_DATA.innerHTML += `
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="flush-heading-${index}">
+            <button class="accordion-button collapsed" type="button" 
+              data-bs-toggle="collapse" 
+              data-bs-target="#flush-collapse-${index}" 
+              aria-expanded="false" 
+              aria-controls="flush-collapse-${index}">
+              ${faq.question}
+            </button>
+          </h2>
+          <div id="flush-collapse-${index}" class="accordion-collapse collapse" 
+            aria-labelledby="flush-heading-${index}" 
+            data-bs-parent="#accordionFlushExample">
+            <div class="accordion-body">
+              ${faq.answer}
+            </div>
+          </div>
+        </div>
+      `;
+    });
+};
+
+  getApiDataFaq(DataQueriesFaq.faq, (data) => {
+    renderAccardionData(data);
+  });
+
 window.addEventListener("DOMContentLoaded", () => {
   var swiper = new Swiper(".mySwiper", {
     slidesPerView: 4,
@@ -190,6 +395,7 @@ window.addEventListener("DOMContentLoaded", () => {
 
 var swiper = new Swiper(".testSwiper", {
   slidesPerView: "auto",
+  loop: true,
   centeredSlides: true,
   spaceBetween: 30,
   // pagination: {
@@ -200,4 +406,38 @@ var swiper = new Swiper(".testSwiper", {
     nextEl: ".swiper-button-next",
     prevEl: ".swiper-button-prev",
   },
+});
+
+
+///images on scroll
+document.addEventListener("DOMContentLoaded", () => {
+  const steps = document.querySelectorAll(".process-left .full");
+  const images = document.querySelectorAll(".process-right .img-box img");
+
+  if (!steps.length || !images.length) {
+    console.error("Steps or images not found. Check your HTML structure.");
+    return;
+  }
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const index = Array.from(steps).indexOf(entry.target);
+
+          if (index !== -1) {
+            images.forEach((img, imgIndex) => {
+              img.classList.toggle("active", imgIndex === index);
+            });
+          }
+        }
+      });
+    },
+    {
+      root: null, 
+      threshold: 0.5, 
+    }
+  );
+
+  steps.forEach((step) => observer.observe(step));
 });

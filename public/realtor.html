@@ -53,40 +53,111 @@
       </div>
     </nav>
   </header>
-  <section id="about-banner">
-    <div class="container-fluid">
+  <section id="name">
+    <div class="container">
       <div class="row">
         <div class="col-xl-12">
-         <div class="banner-essentials">
-            <div class="top-tag-inner">
-              <i class="ri-home-5-line"></i>
-              All Articles
-            </div>
-          <div class="banner-title">
-            <h1>blogs</h1>
+          <div class="name">
+            <h1>Apply as a Realtor</h1>
           </div>
-          <div class="search-bar">
-            <input type="text" placeholder="Search..." id="search">
-            <button type="submit"><i class="ri-search-line"></i></button>
-        </div>
-         </div>
         </div>
       </div>
     </div>
   </section>
-<section id="blogarticles">
-  <div class="container">
-    <div class="row">
-     <div class="row g-1 blogarticles" id="user-container">
-      
-      </div>
-      <div id="pagination" class="pagination">
-          
-      </div>
-      
+  <section id="application">
+    <div class="container">
+      <div class="row">
+        <div class="form" id="form">
+          <h1>Fill all the information</h1>
+          <div class="top">
+            <div class="left">
+              <div class="input">
+                <label for="firstname">First Name</label>
+                <input type="text" name="firstname" placeholder="First Name">
+              </div>
+              <div class="input">
+                <label for="lastname">Last Name</label>
+                <input type="text" name="lastname" placeholder="Last Name">
+              </div>
+              <div class="input">
+                <label for="email">Email</label>
+                <input type="email" name="email" placeholder="Email">
+              </div>
+              <div class="input">
+                <label for="phone">Education</label>
+                <input type="text" name="phone" placeholder="Education">
+              </div>
+              <div class="input">
+                <label for="address">Address</label>
+                <input type="text" name="address" placeholder="Address">
+              </div>
+            </div>
+            <div class="right">
+              <div class="input">
+                <label for="city">City</label>
+                <input type="text" name="city" placeholder="City">
+              </div>
+              <div class="input">
+                <label for="state">State</label>
+                <input type="text" name="state" placeholder="State">
+              </div>
+              <div class="input">
+                <label for="zip">Zip Code</label>
+                <input type="text" name="zip" placeholder="Zip Code">
+              </div>
+              <div class="input">
+                <label for="country">Country</label>
+                <input type="text" name="country" placeholder="Country">
+              </div>
+              <div class="input">
+                <label for="notes">License Expiry</label>
+                <input type="date" name="notes">
+              </div>
+            </div>
+          </div>
+          <div class="bottom">
+            <label>
+              <input type="checkbox" name="option1">
+              Are you affiliated with a real estate brokerage?
+            </label>
+            <div class="input">
+              <label for="brokerageName">Brokerage Name</label>
+              <input type="text" name="brokerageName" placeholder="Brokerage Name">
+              <button type="submit" id="submit">Send Message</button>
+            </div>
+          </div>
+        </div>
+        <div id="thank-you">
+          <h1>Fill all the information</h1>
+          <div class="message">
+            <h2>Thank you! Your submission has been received!</h2>
+          </div>
         </div>
       </div>
-</section>
+    </div>
+  
+  </section>
+  
+  <section id="faq">
+    <div class="container">
+      <div class="row">
+        <div class="col-xl-5 col-md-12 col-sm-12">
+          <div class="top-text">
+            <div class="top-tag-inner">
+              faq
+            </div>
+            <h1>Frequently Asked
+              <br>questions</h1>
+          </div>
+        </div>
+        <div class="col-xl-7 col-md-12 col-sm-12">
+            <div class="accordion accordion-flush accardion-data" id="accordionFlushExample">
+              
+            </div>
+        </div>
+      </div>
+    </div>
+  </section>
 <section id="contact">
   <div class="container">
     <div class="row">
@@ -196,6 +267,7 @@
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-<script src="../src/js/blogpage.js"></script>
+
+<script src="../src/js/realtor.js"></script>
 </body>
 </html>

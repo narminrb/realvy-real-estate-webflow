@@ -17,8 +17,51 @@
 @import "./layout/process";
 @import "./layout/staff-swiper";
 @import "./layout/testimonials";
+@import "./layout/articles";
+@import "./layout/faq";
+@import "./layout/contact";
+@import "./layout/footer";
+@import "./layout/aboutbanner";
+@import "./layout/aboutidealway";
+@import "./layout/aboutnumbers";
+@import "./layout/blogarticles";
+@import "./layout/agents";
+@import "./layout/services";
+@import "./layout/contact-page";
+@import "./layout/form";
+@import "./layout/detail";
 
 
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); 
+  z-index: 1000; 
+}
 
+.modal-content {
+  position: absolute;
+  top: 50%; 
+  left: 50%;
+  transform: translate(-50%, -50%); 
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  max-width: 500px;
+  width: 90%; 
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  button{
+    background-color: black;
+    color: white;
+    border-radius: 4px;
+    border: none;
+    padding: 5px 10px;
+    margin: 5px 0;
+  }
+}
 
+ 
 

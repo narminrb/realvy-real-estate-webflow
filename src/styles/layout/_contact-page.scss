@@ -1,0 +1,72 @@
+#contact-cards{
+  @include Flexible(center, center, row, wrap, 0);
+  font-family: $Base_Font;
+  padding: 60px 0;
+ 
+  .numbers{
+    margin: 0px 10px;
+    .number-card{
+      @include Flexible(flex-start, flex-start, row, wrap, 10px);
+      margin-bottom: 40px;
+      background-color: #f7f7f7;
+      border: 1px solid #e8e8e8;
+      border-radius: 20px;
+      padding: 25px 15px 25px 24px;
+      .head{
+        i{
+          letter-spacing: -.3px;
+          margin-top: 0;
+          font-size: 36px;
+          line-height: 120%;
+          font-weight: 500;
+        }
+
+      }
+
+     
+      .paragraph{
+        h2{
+          color:#0c0407;
+          letter-spacing: -.03em;
+          margin-top: 0;
+          margin-bottom: 0;
+          letter-spacing: 0;
+          font-weight: 600;
+          margin-bottom: 10px;
+          font-size: 24px;
+          font-weight: 600;
+          line-height: 112%;
+        }
+        p{
+          letter-spacing: -.1px;
+          font-size: 16px;
+          line-height: 150%;
+          margin-bottom: 0;
+    line-height: 24px;
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    unicode-bidi: isolate;
+        }
+      }
+    }
+  }
+}
+
+#iframe {
+  @include Flexible(center, center, row, nowrap, 0); 
+  font-family: $Base_Font;
+  padding: 60px 0;
+
+  .iframe {
+    max-width: 1200px;
+    height: 600px;
+    border-radius: 40px;
+    border: none;
+    overflow: hidden;
+    margin: 0 auto; 
+    cursor: url(https://maps.gstatic.com/mapfiles/openhand_8_8.cur);
+  }
+}

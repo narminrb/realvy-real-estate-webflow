@@ -1,0 +1,99 @@
+#faq {
+  @include Flexible(center, center, row, wrap, 0);
+  font-family: $Base_Font;
+  padding: 60px 0;
+  position: relative;
+
+  .top-text {
+    @include Flexible(flex-start, flex-start, column, wrap, 0);
+    margin: 10px 0;
+    position: sticky;
+    top: 20px;
+
+    .top-tag-inner {
+      @include Flexible(center, center, row, wrap, 0);
+      letter-spacing: -.05em;
+      text-transform: uppercase;
+      background-color: #f7f7f7;
+      border: 2px solid #e8e8e8;
+      border-radius: 28px;
+      height: 40px;
+      margin-bottom: 16px;
+      padding: 8px 16px;
+      font-size: 14px;
+      line-height: 1.5;
+      display: inline-flex;
+    }
+
+    h1 {
+      margin-top: 0;
+      margin-bottom: 0;
+      font-size: 52px;
+      font-weight: 600;
+      line-height: 112%;
+      letter-spacing: -.3px;
+      color: black;
+    }
+  }
+
+  .accordion .accordion-button:focus {
+    outline: none;
+    box-shadow: none;
+  }
+
+  /* Accordion Item */
+  .accordion .accordion-item {
+    border: none;
+    margin-bottom: 10px;
+    overflow: hidden;
+    border-radius: 15px;
+    background-color: #f5f5f5;
+  }
+
+  .accordion .accordion-button {
+    background-color: #f5f5f5;
+    border: 1px solid #ddd;
+    padding: 25px;
+    font-weight: bold;
+    transition: background-color 0.3s ease,;
+    color: #000;
+    letter-spacing: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 112%;
+  }
+
+  .accordion .accordion-button:not(.collapsed) {
+    color: #000;
+    border-bottom: none;
+  }
+
+
+  .accordion .accordion-collapse {
+    border: 1px solid #ddd;
+    border-top: none;
+    padding: 0 15px;
+    color: #333;
+    height: 0; 
+    opacity: 0;
+    overflow: hidden;
+    transition: height 0.4s ease-in-out,padding 0.4s ease-in-out;
+    margin-top: 12px;
+    margin-bottom: 0;
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+ 
+  .accordion .accordion-collapse.show {
+    height: auto;
+    opacity: 1;
+    padding: 15px;
+    border-bottom: 1px solid #ddd;
+  }
+  .accordion .accordion-collapse.collapsing {
+    overflow: hidden;
+  }
+}

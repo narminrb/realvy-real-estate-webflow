@@ -1,0 +1,45 @@
+#service-cards{
+  @include Flexible(center, center, row, wrap, 0);
+  font-family: $Base_Font;
+  padding: 60px 0;
+ 
+  .numbers{
+    margin: 0px 10px;
+    .number-card{
+      margin-bottom: 40px;
+      background-color: #f7f7f7;
+      border: 1px solid #e8e8e8;
+      border-radius: 20px;
+      padding: 25px 15px 25px 24px;
+      .head{
+        h2{
+          letter-spacing: -.3px;
+          font-size: 36px;
+          line-height: 120%;
+          font-weight: 600;
+        }
+      }
+
+     
+      .paragraph{
+        margin-top: 60px;
+        h2{
+          color:#0c0407;
+          letter-spacing: -.03em;
+          margin-top: 0;
+          margin-bottom: 0;
+          letter-spacing: 0;
+          font-size: 32px;
+          line-height: 120%;
+          font-weight: 600;
+          margin-bottom: 10px;
+              }
+        p{
+          letter-spacing: -.1px;
+          font-size: 14px;
+          line-height: 150%;
+        }
+      }
+    }
+  }
+}

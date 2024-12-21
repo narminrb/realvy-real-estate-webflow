@@ -1,8 +1,7 @@
-#banner{
+#about-banner{
   @include Flexible(center, center, row, wrap, 0);
   font-family: $Base_Font;
   padding: 60px 0;
-
   .banner-essentials{
     @include Flexible(center, center, column, wrap, 0);
     .top-tag-inner{
@@ -24,31 +23,50 @@
 
 
     }
-    .banner-title{
+    .banner-title {
       @include Flexible(center, center, row, wrap, 0);
-      margin: 20px 0;  
-      h1{
+      margin: 20px 0;
+    
+      h1 {
         letter-spacing: -.04em;
         text-transform: uppercase;
-        font-size: 200px;
         font-weight: 600;
         line-height: 1.1;
         color: #0c0407;
+    
+        font-size: 200px;
+        @media (max-width: 1200px) {
+          font-size: 150px;
+        }
+    
+        @media (max-width: 768px) {
+          font-size: 100px;
+        }
+        @media (max-width: 576px) {
+          font-size: 50px;
+        }
       }
     }
+    
 
     .banner-image{
     opacity: 1;
-    transform: translate3d(0px, -41.806px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg);
+    top: 20px;
+    transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg);
     transform-style: preserve-3d;
     will-change: transform;
     text-align: center;
     justify-content: center;
     align-items: flex-end;
     display: flex;
+    border-radius: 24px;
+    overflow: hidden;
+    max-width: 1200px;
+    max-height: 600px;
     img{
-      width: 100%;
-    max-width: 1500px;
+      max-width: 100%;
+      height: auto;
+      display: inline-block;
     }
     }
   }
@@ -70,6 +88,6 @@
 
 @media (max-width: 480px) {
   .banner-title h1 {
-    font-size: 60px;
+    font-size: 60px; 
   }
 }
